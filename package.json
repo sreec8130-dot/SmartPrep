@@ -1,0 +1,10 @@
+{
+  "name": "smartprep",
+  "version": "1.0.0",
+  "private": true,
+  "description": "SmartPrep - Student Exam Preparation MERN Application",
+  "scripts": {
+    "server": "npm --prefix server run dev",
+    "client": "npm --prefix client run dev"
+  }
+}
