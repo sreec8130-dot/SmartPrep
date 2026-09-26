@@ -92,7 +92,7 @@ export default function Landing() {
   ];
 
   return (
-    <div className="min-h-screen bg-slate-50 text-slate-900 flex flex-col selection:bg-teal-100 selection:text-teal-900">
+    <div className="min-h-screen bg-slate-50 text-slate-900 flex flex-col selection:bg-teal-100 selection:text-teal-900 relative">
       {/* ──────────────── Navbar ──────────────── */}
       <header className="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-200/80 transition-all">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -220,11 +220,29 @@ export default function Landing() {
         )}
       </header>
 
-      {/* ──────────────── Hero Section with Animations ──────────────── */}
+      {/* ──────────────── Hero Section with Subtle Background Animations ──────────────── */}
       <section className="relative overflow-hidden pt-12 pb-20 sm:pt-20 sm:pb-28">
+        {/* Subtle Background Dot Grid */}
+        <div className="absolute inset-0 bg-grid-dots opacity-30 pointer-events-none -z-10" />
+
         {/* Animated Background Glowing Orbs */}
-        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[650px] h-[380px] bg-gradient-to-tr from-teal-200/50 via-teal-100/30 to-transparent blur-3xl -z-10 rounded-full pointer-events-none animate-pulse-glow" />
-        <div className="absolute top-1/3 right-10 w-[300px] h-[300px] bg-teal-100/30 blur-2xl -z-10 rounded-full pointer-events-none animate-pulse-glow" style={{ animationDelay: '2s' }} />
+        <div className="absolute top-1/4 -left-20 w-96 h-96 bg-teal-200/40 rounded-full blur-3xl pointer-events-none -z-10 animate-float-drift" />
+        <div className="absolute top-1/3 right-10 w-80 h-80 bg-teal-100/40 rounded-full blur-3xl pointer-events-none -z-10 animate-float-reverse" />
+        <div className="absolute -top-10 left-1/2 -translate-x-1/2 w-[650px] h-[380px] bg-gradient-to-tr from-teal-200/40 via-teal-100/25 to-transparent blur-3xl pointer-events-none -z-10 rounded-full animate-pulse-glow" />
+
+        {/* Subtle Floating Study Accents / Sparkles */}
+        <div className="absolute top-20 left-10 text-teal-400/35 pointer-events-none -z-10 animate-twinkle hidden sm:block">
+          <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24">
+            <path d="M12 0L14.5 9.5L24 12L14.5 14.5L12 24L9.5 14.5L0 12L9.5 9.5z" />
+          </svg>
+        </div>
+        <div className="absolute top-36 right-20 text-teal-400/30 pointer-events-none -z-10 animate-twinkle hidden sm:block" style={{ animationDelay: '2s' }}>
+          <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
+            <path d="M12 0L14.5 9.5L24 12L14.5 14.5L12 24L9.5 14.5L0 12L9.5 9.5z" />
+          </svg>
+        </div>
+        <div className="absolute bottom-20 left-1/4 w-3 h-3 rounded-full border border-teal-300/40 pointer-events-none -z-10 animate-float-gentle hidden sm:block" />
+        <div className="absolute bottom-24 right-1/4 w-2.5 h-2.5 rounded-full bg-teal-200/50 pointer-events-none -z-10 animate-float-drift hidden sm:block" />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
@@ -372,9 +390,10 @@ export default function Landing() {
         </div>
       </section>
 
-      {/* ──────────────── Features Section ──────────────── */}
-      <section id="features" className="py-20 bg-white border-y border-slate-200/80">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* ──────────────── Features Section with subtle ambient backdrop ──────────────── */}
+      <section id="features" className="py-20 bg-white border-y border-slate-200/80 relative overflow-hidden">
+        <div className="absolute inset-0 bg-grid-dots opacity-20 pointer-events-none" />
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <h2 className="text-xs font-bold uppercase tracking-widest text-teal-600 mb-2">
               Comprehensive Features
@@ -413,8 +432,8 @@ export default function Landing() {
       </section>
 
       {/* ──────────────── How It Works Section ──────────────── */}
-      <section id="how-it-works" className="py-20 bg-slate-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section id="how-it-works" className="py-20 bg-slate-50 relative overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <h2 className="text-xs font-bold uppercase tracking-widest text-teal-600 mb-2">
               Simple 4-Step Process
@@ -449,8 +468,8 @@ export default function Landing() {
       </section>
 
       {/* ──────────────── About SmartPrep Section ──────────────── */}
-      <section id="about" className="py-20 bg-white border-t border-slate-200/80">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6">
+      <section id="about" className="py-20 bg-white border-t border-slate-200/80 relative overflow-hidden">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6 relative z-10">
           <div className="inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-teal-50 border border-teal-100 text-teal-600 mb-2 hover:scale-110 transition-transform">
             <IconBook className="w-7 h-7" />
           </div>
@@ -488,8 +507,12 @@ export default function Landing() {
         </div>
       </section>
 
-      {/* ──────────────── Call-To-Action (CTA) Section ──────────────── */}
+      {/* ──────────────── Call-To-Action (CTA) Section with Ambient Floating Motion ──────────────── */}
       <section className="py-20 bg-gradient-to-br from-teal-900 via-teal-800 to-teal-950 text-white relative overflow-hidden">
+        {/* Subtle Ambient Background Motion Orbs */}
+        <div className="absolute -top-24 -left-24 w-80 h-80 bg-teal-500/20 rounded-full blur-3xl pointer-events-none animate-float-drift" />
+        <div className="absolute -bottom-24 -right-24 w-80 h-80 bg-teal-400/20 rounded-full blur-3xl pointer-events-none animate-float-reverse" />
+
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6 relative z-10 animate-fade-in-up">
           <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-teal-700/50 border border-teal-500/30 text-teal-200 text-xs font-semibold">
             <IconSparkles className="w-3.5 h-3.5" />
